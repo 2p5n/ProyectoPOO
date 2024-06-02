@@ -1,6 +1,13 @@
 package Controller;
 public class Celda {
+    //ATRIBUTOS
     private int NumeroCelda;
-    private int capacidad;
+    private PPL[] listaPPLs;
+    
+    //CONSTRUCTOR
+    public Celda(PPL[] listaPPLs) {
+        this.NumeroCelda = 0;
+        this.listaPPLs = listaPPLs;
+    }
     
 }

@@ -1,21 +1,14 @@
 package Controller;
 public class Pabellon {
+    //ATRIBUTOS
     private int numeroPabe;
-    private String nombrePabe;
-    private int capacidadPabe;
-    private String clasificacionPabe;
-    private int c;
-    private int p;
-    String [] Celda = new String [c];
-    String [] PPL = new String [p];
+    private String tipoPabe;
+    private Celda[] listaCeldas;
 
-    public Pabellon(int numeroPabe, String nombrePabe, int capacidadPabe, String clasificacionPabe, int c, int p) {
-        this.numeroPabe = numeroPabe;
-        this.nombrePabe = nombrePabe;
-        this.capacidadPabe = capacidadPabe;
-        this.clasificacionPabe = clasificacionPabe;
-        this.c = c;
-        this.p = p;
+    //ATRIBUTOS
+    public Pabellon(Celda[]listaCelda) {
+        this.numeroPabe = 0;
+        this.tipoPabe = null;
+        this.listaCeldas = listaCelda;
     }
-    
 }
