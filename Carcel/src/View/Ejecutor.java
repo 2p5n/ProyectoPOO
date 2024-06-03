@@ -9,6 +9,7 @@ public class Ejecutor {
     public static void main(String[] args) {
         Scanner tc = new Scanner(System.in);
         int n = 200;//Tamaño principal
+        double prom = 0;
         GenerarData generador = new GenerarData();//Instanciar el objeto para generar la informacion
 
         //Meter en arreglos la data
@@ -31,20 +32,28 @@ public class Ejecutor {
         carcel.asignarPabellon();
         carcel.calcularFechaSalida();
         carcel.calcularAniosRestantes();
+        prom = carcel.promedioEdades();
         System.out.println(carcel);
+        carcel.promEdadesPabe();
+        System.out.println("Promedio de Edades de la carcel: " + prom);
+        
         System.out.println("INGRESA LA CEDULA DEL PPL QUE QUIERES ELIMINAR");
         String cedula = tc.next();
         carcel.eliminarPreso(cedula);
         System.out.println(carcel);
         carcel.consultarCuposDisponibles();
-        /*
-        if(carcel.eliminarPreso(cedula)){
-            System.out.println(carcel);
-            System.out.println("PRESO: "+cedula+" ELIMINADO");
-        }else
-            System.out.println("HIJUEPUTA NO ENCONTRADO");
-            */
-        // Mostrar datos de la cárcel
-        
+        System.out.println("Ingresa los datos del PPL que deseas meter");
+        System.out.println("En que pabellon deseas meterlo?");
+        String pabellon = tc.next();
+        System.out.println("Nombre:");
+        String nombre = tc.next();
+        System.out.println("Edad");
+        int edad = tc.nextInt();
+        System.out.println("Cedula:");
+        String cedulita = tc.next();
+        System.out.println("Delito");
+        String delito = tc.next();
+        carcel.agregarPPL(pabellon, nombre, cedula, edad, delito);
+        System.out.println(carcel);
     }
 }

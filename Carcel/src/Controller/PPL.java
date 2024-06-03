@@ -13,6 +13,7 @@ public class PPL {
     private int pena; // Años
     private int visitasSemanales;
     private String pabellon;
+    private double promEdades;
     
     // CONSTRUCTOR
     public PPL(String nombre, int edad, String cedula, String fechaIngreso, String delito) {
@@ -27,6 +28,7 @@ public class PPL {
         this.pena = 0;
         this.visitasSemanales = 0;
         this.pabellon = null;
+        this.promEdades = 0;
     }
 
     public String getNombre() {
@@ -115,6 +117,14 @@ public class PPL {
 
     public void setPabellon(String pabellon) {
         this.pabellon = pabellon;
+    }
+
+    public double getPromEdades() {
+        return promEdades;
+    }
+
+    public void setPromEdades(double promEdades) {
+        this.promEdades = promEdades;
     }
     
     //TOSTRING

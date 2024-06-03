@@ -4,14 +4,20 @@ import java.time.LocalDate;
 import java.util.Random;
 
 public class GenerarData {
-    // Constructor que acepta los arreglos como parámetros
     public GenerarData() {
     }
-    /*
-    public String fechaActual(){
-        
-    }*/
-    public String[] generarCedulas() { //Generar identificaciondes de los PPL
+    
+    public String fechaActual(){ //RETORNA UNA CADENA CON LA FECHA ACTUAL
+        LocalDate fechaActual = LocalDate.now();
+        String fechaCadena = null;
+        int diaActual = fechaActual.getDayOfMonth();
+        int mesActual = fechaActual.getMonthValue();
+        int anioActual = fechaActual.getYear();
+        fechaCadena = String.valueOf(diaActual)+"/"+String.valueOf(mesActual)+"/"+String.valueOf(anioActual);
+        return fechaCadena;
+    }
+    
+    public String[] generarCedulas() { //RETORNA UN ARRAY DE CADENAS CON CEDULAS DE 10 DIGITOS
         String array[] = new String[1000];
         int x1 = 0;
         int x2 = 0;
@@ -23,7 +29,7 @@ public class GenerarData {
         return array;
     }
 
-    public String[] generarNombresPPL() { //Generar nombres completos de los PPL
+    public String[] generarNombresPPL() { //RETORNA UN ARRAY DE CADENAS CON  NOMBRES ALEATORIOS
         String array[] = new String[1000];
         String nomPersonas1[] = {"Roberto", "Dario", "Fabian", "Gonzalo", "Carlos", "Mario", "Pedro", "Victor", "Michael", "Byron"};
         String nomPersonas2[] = {"Antonio", "Cesar", "Pablo", "Adrian", "Diego", "Julian", "Sergio", "Paulo", "Angel", "Vicente"};
@@ -39,7 +45,7 @@ public class GenerarData {
         return array;
     }
 
-    public int[] generaredades() { //Generar edades de los PPL
+    public int[] generaredades() { //RETORNA UN ARRAY DE ENTEROS CON EDADES ALEATORIAS
         int[] array = new int[1000];
         Random rand = new Random();
 
@@ -51,7 +57,7 @@ public class GenerarData {
         return array;
     }
 
-    public String[] generardelitos() {//Generar el delito cometido
+    public String[] generardelitos() { //RETORNA UN ARRAY DE CADENAS CON DELITOS ALEATORIOS
         //GENERAR DELITOS ALTA PELIGROSIDAD
         String[] arrayA = new String[200];
         String[] arrayM1 = new String[200];
@@ -108,7 +114,7 @@ public class GenerarData {
         return listaDelitos;
     }
   
-    public String[] generarFechasIngreso() { //Generar las fechas de ingreso de los PPL
+    public String[] generarFechasIngreso() { //RETORNA UN ARRAY DE CADENAS CON FECHAS DE INGRESO ALEATORIAS
         String array[] = new String[1000];
         int dia = 0;
         int mes = 0;
