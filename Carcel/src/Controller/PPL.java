@@ -1,7 +1,7 @@
 package Controller;
 //CLASE BASE PARA CREAR PPLs
 public class PPL {
-    //ATRIBUTOS
+    // ATRIBUTOS
     private String nombre;
     private int edad;
     private String cedula;
@@ -10,10 +10,11 @@ public class PPL {
     private int aniosRestantes;
     private String clasificacion;
     private String delito;
-    private int pena; //Años
+    private int pena; // Años
     private int visitasSemanales;
+    private String pabellon;
     
-    //CONSTRUCTOR
+    // CONSTRUCTOR
     public PPL(String nombre, int edad, String cedula, String fechaIngreso, String delito) {
         this.nombre = nombre;
         this.edad = edad;
@@ -25,11 +26,9 @@ public class PPL {
         this.delito = delito;
         this.pena = 0;
         this.visitasSemanales = 0;
+        this.pabellon = null;
     }
-    
-    //TOSTRING
-    
-    //SETTERS Y GETTERS
+
     public String getNombre() {
         return nombre;
     }
@@ -110,10 +109,31 @@ public class PPL {
         this.visitasSemanales = visitasSemanales;
     }
 
-    @Override
-    public String toString() {
-        return "PPL{" + "nombre=" + nombre + ", edad=" + edad + ", cedula=" + cedula + ", fechaIngreso=" + fechaIngreso + ", delito=" + delito + '}';
+    public String getPabellon() {
+        return pabellon;
+    }
+
+    public void setPabellon(String pabellon) {
+        this.pabellon = pabellon;
     }
     
-    
+    //TOSTRING
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("PPL{");
+        sb.append("nombre=").append(nombre);
+        sb.append(", edad=").append(edad);
+        sb.append(", cedula=").append(cedula);
+        sb.append(", fechaIngreso=").append(fechaIngreso);
+        sb.append(", fechaSalida=").append(fechaSalida);
+        sb.append(", pena=").append(pena);
+        sb.append(", clasificacion=").append(clasificacion);
+        sb.append(", anios restantes=").append(aniosRestantes);
+        sb.append(", delito=").append(delito);
+        sb.append(", pabellon=").append(pabellon);
+        sb.append('}');
+        return sb.toString();
+    }
+     
 }

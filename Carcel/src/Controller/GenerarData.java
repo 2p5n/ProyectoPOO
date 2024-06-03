@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.util.Random;
 
 public class GenerarData {
-
     // Constructor que acepta los arreglos como parámetros
     public GenerarData() {
     }
@@ -38,25 +37,6 @@ public class GenerarData {
     }
 
     public int[] generaredades() { //Generar edades de los PPL
-        /*String array[] = new String[1000];
-        int edad = 0;
-        int anioActual = 0;
-        LocalDate fechaActual = LocalDate.now();
-        anioActual = fechaActual.getYear();
-        int anioIngresoAux = 0;
-        String anioIngreso = null;
-        int resto = 0;
-        Random rand = new Random();
-        for (int i = 0; i < array.length; i++) {
-            edad = rand.nextInt(50 - 18 + 1) + 18;
-            anioIngresoAux = rand.nextInt(50 - 18 + 1) + 18;
-            anioIngreso = String.valueOf(anioIngresoAux);
-            resto = anioActual - anioIngreso;
-            if (edad <= (resto + 18)) {
-                edad = (resto + 18) + (int) (Math.random() * 5 - 1) + 1;
-            }
-            array[i] = String.valueOf(edad);
-        }*/
         int[] array = new int[1000];
         Random rand = new Random();
 
@@ -69,27 +49,62 @@ public class GenerarData {
     }
 
     public String[] generardelitos() {//Generar el delito cometido
-        String array[] = new String[1000];
-        int indAleatorio = 0;
+        //GENERAR DELITOS ALTA PELIGROSIDAD
+        String[] arrayA = new String[200];
+        String[] arrayM1 = new String[200];
+        String[] arrayM2 = new String[200];
+        String[] arrayB1 = new String[200];
+        String[] arrayB2 = new String[200];
+        String[] listaDelitos = new String[1000];
         Random rand = new Random();
-        String delitosA[] = {"Narcotrafico", "Homicidio"};
-        String delitosM[] = {"Robo", "Hurto", "Fraude", "Evasion"};
-        String delitosB[] = {"Invasion", "Amenazas", "Estafa", "Otros"};
-        for (int i = 0; i < array.length; i++) {
-            if (array[i].equals("Alto")) {
-                indAleatorio = rand.nextInt((delitosA.length - 1) - 0 + 1) + 0;
-                array[i] = delitosA[indAleatorio];
-            } else if (array[i].equals("Medio")) {
-                indAleatorio = rand.nextInt((delitosM.length - 1) - 0 + 1) + 0;
-                array[i] = delitosM[indAleatorio];
-            } else if (array[i].equals("Bajo")) {
-                indAleatorio = rand.nextInt((delitosB.length - 1) - 0 + 1) + 0;
-                array[i] = delitosB[indAleatorio];
-            }
+        String[] delitosA = {"Narcotrafico", "Homicidio"};
+        for (int i = 0; i < arrayA.length; i++) {
+            // Generar un índice aleatorio para seleccionar un delito
+            int indAleatorio = rand.nextInt(delitosA.length);
+            arrayA[i] = delitosA[indAleatorio];
         }
-        return array;
+        
+        //GENERAR DELITOS MEDIA PELIGROSIDAD PABELLON 2
+        String[] delitosM = {"Robo", "Hurto", "Fraude", "Evasion"};
+        for (int i = 0; i < arrayM1.length; i++) {
+            // Generar un índice aleatorio para seleccionar un delito
+            int indAleatorio = rand.nextInt(delitosM.length);
+            arrayM1[i] = delitosM[indAleatorio];
+        }
+        
+        //GENERAR DELITOS MEDIA PELIGROSIDAD PABELLON 3
+        for (int i = 0; i < arrayM2.length; i++) {
+            // Generar un índice aleatorio para seleccionar un delito
+            int indAleatorio = rand.nextInt(delitosM.length);
+            arrayM2[i] = delitosM[indAleatorio];
+        }
+        
+        //GENERAR DELITOS BAJA PELIGROSIDAD PABELLON 4
+        String[] delitosB = {"Invasion", "Amenazas", "Estafa", "Otros"};
+        for (int i = 0; i < arrayB1.length; i++) {
+            // Generar un índice aleatorio para seleccionar un delito
+            int indAleatorio = rand.nextInt(delitosB.length);
+            arrayB1[i] = delitosB[indAleatorio];
+        }
+        
+        //GENERAR DELITOS BAJA PELIGROSIDAD PABELLON 5
+        for (int i = 0; i < arrayB2.length; i++) {
+            // Generar un índice aleatorio para seleccionar un delito
+            int indAleatorio = rand.nextInt(delitosB.length);
+            arrayB2[i] = delitosB[indAleatorio];
+        }
+        
+        //UNIR TODOS LOS ARREGLOS ANTERIORES EN UNO SOLO
+        System.arraycopy(arrayA, 0, listaDelitos, 0, 200);
+        System.arraycopy(arrayM1, 0, listaDelitos, 200, 200);
+        System.arraycopy(arrayM2, 0, listaDelitos, 400, 200);
+        System.arraycopy(arrayB1, 0, listaDelitos, 600, 200);
+        System.arraycopy(arrayB2, 0, listaDelitos, 800, 200);
+        
+        //RETORNAR LA LISTA COMPLETA
+        return listaDelitos;
     }
-
+  
     public String[] generarFechasIngreso() { //Generar las fechas de ingreso de los PPL
         String array[] = new String[1000];
         int dia = 0;
@@ -101,7 +116,7 @@ public class GenerarData {
         for (int i = 0; i < array.length; i++) {
             dia = (int) (Math.random() * 31) + 1;
             mes = (int) (Math.random() * 12) + 1;
-            anio = rand.nextInt(Integer.valueOf(anioActual) - 1980 + 1) + 1980;
+            anio = rand.nextInt(Integer.valueOf(anioActual) - 2020 + 1) + 2020;
             if ((dia < 10) && (mes < 10)) {
                 array[i] = "0" + String.valueOf(dia) + "/0" + String.valueOf(mes) + "/" + String.valueOf(anio);
             } else if (dia < 10) {
@@ -114,5 +129,4 @@ public class GenerarData {
         }
         return array;
     }
-
 }
