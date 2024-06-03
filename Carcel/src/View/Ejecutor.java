@@ -34,6 +34,7 @@ public class Ejecutor {
         carcel.calcularAniosRestantes();
         prom = carcel.promedioEdades();
         System.out.println(carcel);
+        carcel.promDelitoPabe();
         carcel.promEdadesPabe();
         System.out.println("Promedio de Edades de la carcel: " + prom);
         

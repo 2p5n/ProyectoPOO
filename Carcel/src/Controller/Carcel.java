@@ -279,12 +279,68 @@ public class Carcel {
                 promEdadPabe3 += listaPPLCompleta[i].getEdad();
             }
         }
-        promEdadPabe1 = promEdadPabe1/200;
-        promEdadPabe2 = promEdadPabe2/400;
-        promEdadPabe3 = promEdadPabe3/400;
+        promEdadPabe1 = promEdadPabe1 / 200;
+        promEdadPabe2 = promEdadPabe2 / 400;
+        promEdadPabe3 = promEdadPabe3 / 400;
         System.out.println("Promedio de edades Pabellon A: " + promEdadPabe1);
         System.out.println("Promedio de edades Pabellon M: " + promEdadPabe2);
         System.out.println("Promedio de edades Pabellon B: " + promEdadPabe3);
+    }
+
+    public void promDelitoPabe() {
+        int promDelito1 = 0;
+        int promDelito2 = 0;
+        int promDelito3 = 0;
+        int promDelito4 = 0;
+        int promDelito5 = 0;
+        int promDelito6 = 0;
+        int promDelito7 = 0;
+        int promDelito8 = 0;
+        int promDelito9 = 0;
+        int promDelito10 = 0;
+        for (int i = 0; i < this.listaPPLCompleta.length; i++) {
+            if (this.listaPPLCompleta[i].getDelito().equalsIgnoreCase("Narcotrafico")) {
+                promDelito1++;
+            }
+            if (this.listaPPLCompleta[i].getDelito().equalsIgnoreCase("Homicidio")) {
+                promDelito2++;
+            }
+            if (this.listaPPLCompleta[i].getDelito().equalsIgnoreCase("Robo")) {
+                promDelito3++;
+            }
+            if (this.listaPPLCompleta[i].getDelito().equalsIgnoreCase("Hurto")) {
+                promDelito4++;
+            }
+            if (this.listaPPLCompleta[i].getDelito().equalsIgnoreCase("Fraude")) {
+                promDelito5++;
+            }
+            if (this.listaPPLCompleta[i].getDelito().equalsIgnoreCase("Evasion")) {
+                promDelito6++;
+            }
+            if (this.listaPPLCompleta[i].getDelito().equalsIgnoreCase("Invasion")) {
+                promDelito7++;
+            }
+            if (this.listaPPLCompleta[i].getDelito().equalsIgnoreCase("Amenazas")) {
+                promDelito8++;
+            }
+            if (this.listaPPLCompleta[i].getDelito().equalsIgnoreCase("Estafa")) {
+                promDelito9++;
+            }
+            if (this.listaPPLCompleta[i].getDelito().equalsIgnoreCase("Otros")) {
+                promDelito10++;
+            }
+        }
+        System.out.println("--- Delitos cometidos ---");
+        System.out.println("Narcotrafico: " + promDelito1);
+        System.out.println("Homicidio: " + promDelito2);
+        System.out.println("Robo: " + promDelito3);
+        System.out.println("Hurto: " + promDelito4);
+        System.out.println("Fraude: " + promDelito5);
+        System.out.println("Evasion: " + promDelito6);
+        System.out.println("Invasion: " + promDelito7);
+        System.out.println("Amenazas: " + promDelito8);
+        System.out.println("Estafa: " + promDelito9);
+        System.out.println("Otros: " + promDelito10);
     }
 
     @Override
