@@ -81,4 +81,29 @@ public class GenerarData {
         }
         return array;
     }
+
+    public String[] generarFechasIngreso() { //Generar las fechas de ingreso de los PPL
+        String array[] = new String[1000];
+        int dia = 0;
+        int mes = 0;
+        int anio = 0;
+        LocalDate fechaActual = LocalDate.now();
+        Random rand = new Random();
+        int anioActual = fechaActual.getYear();
+        for (int i = 0; i < array.length; i++) {
+            dia = (int) (Math.random() * 31) + 1;
+            mes = (int) (Math.random() * 12) + 1;
+            anio = rand.nextInt(Integer.valueOf(anioActual) - 1980 + 1) + 1980;
+            if ((dia < 10) && (mes < 10)) {
+                array[i] = "0" + String.valueOf(dia) + "/0" + String.valueOf(mes) + "/" + String.valueOf(anio);
+            } else if (dia < 10) {
+                array[i] = "0" + String.valueOf(dia) + "/" + String.valueOf(mes) + "/" + String.valueOf(anio);
+            } else if (mes < 10) {
+                array[i] = String.valueOf(dia) + "/0" + String.valueOf(mes) + "/" + String.valueOf(anio);
+            } else {
+                array[i] = String.valueOf(dia) + "/" + String.valueOf(mes) + "/" + String.valueOf(anio);
+            }
+        }
+        return array;
+    }
 }

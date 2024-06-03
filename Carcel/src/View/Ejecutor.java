@@ -8,5 +8,6 @@ public class Ejecutor {
         String edades[] = generador.generaredades();
         String cedulas[] = generador.generarCedulas();
         String delitos[] = generador.generardelitos();
+        String fechasIngreso[] = generador.generarFechasIngreso();
     }
 }
