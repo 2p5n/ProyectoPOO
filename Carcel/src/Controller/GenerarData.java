@@ -37,25 +37,33 @@ public class GenerarData {
         return array;
     }
 
-    public String[] generaredades() { //Generar edades de los PPL
-        String array[] = new String[1000];
+    public int[] generaredades() { //Generar edades de los PPL
+        /*String array[] = new String[1000];
         int edad = 0;
         int anioActual = 0;
         LocalDate fechaActual = LocalDate.now();
         anioActual = fechaActual.getYear();
-        String anioIngresoAux = null;
-        int anioIngreso = 0;
+        int anioIngresoAux = 0;
+        String anioIngreso = null;
         int resto = 0;
         Random rand = new Random();
         for (int i = 0; i < array.length; i++) {
             edad = rand.nextInt(50 - 18 + 1) + 18;
-            anioIngresoAux = array[i].substring(6);
-            anioIngreso = Integer.valueOf(anioIngresoAux);
+            anioIngresoAux = rand.nextInt(50 - 18 + 1) + 18;
+            anioIngreso = String.valueOf(anioIngresoAux);
             resto = anioActual - anioIngreso;
             if (edad <= (resto + 18)) {
                 edad = (resto + 18) + (int) (Math.random() * 5 - 1) + 1;
             }
             array[i] = String.valueOf(edad);
+        }*/
+        int[] array = new int[1000];
+        Random rand = new Random();
+
+        for (int i = 0; i < array.length; i++) {
+            // Generar una edad aleatoria entre 18 y 50 años
+            int edad = rand.nextInt(50 - 18 + 1) + 18;
+            array[i] = edad;
         }
         return array;
     }
@@ -106,4 +114,5 @@ public class GenerarData {
         }
         return array;
     }
+
 }

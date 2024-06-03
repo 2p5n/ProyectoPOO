@@ -109,6 +109,11 @@ public class PPL {
     public void setVisitasSemanales(int visitasSemanales) {
         this.visitasSemanales = visitasSemanales;
     }
+
+    @Override
+    public String toString() {
+        return "PPL{" + "nombre=" + nombre + ", edad=" + edad + ", cedula=" + cedula + ", fechaIngreso=" + fechaIngreso + ", delito=" + delito + '}';
+    }
     
     
 }
