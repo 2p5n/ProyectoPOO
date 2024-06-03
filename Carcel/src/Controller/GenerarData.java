@@ -7,7 +7,10 @@ public class GenerarData {
     // Constructor que acepta los arreglos como parámetros
     public GenerarData() {
     }
-    
+    /*
+    public String fechaActual(){
+        
+    }*/
     public String[] generarCedulas() { //Generar identificaciondes de los PPL
         String array[] = new String[1000];
         int x1 = 0;

@@ -166,21 +166,30 @@ public class Carcel {
                 cuposDispP_B+=1;
             }
         }
-        System.out.println("Hay "+cuposDispP_B+" cupos disponibles en el pabellon M (Media Peligrosidad)");
+        System.out.println("Hay "+cuposDispP_B+" cupos disponibles en el pabellon B (Media Peligrosidad)");
         
         if(!haycupos)
             System.out.println("NO HAY CUPOS DISPONIBLES");
     }
     
     //INGRESAR UN PPL A LA CARCEL SOLO SI HAY CUPOS DISPONIBLES
-    /*
-    public void agregarPPL(String nombre, String cedula, int edad, String delito){
+ 
+    public void agregarPPL(String pabellon, String nombre, String cedula, int edad, String delito){
+        //METER PPL EN EL PABELLON A
         for (int i = 0; i < this.listaPPLCompleta.length; i++) {
-            if(this.listaPPLCompleta[i].getNombre().equalsIgnoreCase("-")){
-                cuposDisp+=1;
+            if(this.listaPPLCompleta[i].getNombre().equalsIgnoreCase("-")&&this.listaPPLCompleta[i].getPabellon().equalsIgnoreCase(pabellon)){
+                this.listaPPLCompleta[i].setNombre(nombre);
+                this.listaPPLCompleta[i].setEdad(edad);
+                this.listaPPLCompleta[i].setCedula(cedula);
+                this.listaPPLCompleta[i].setFechaIngreso("-");
+                this.listaPPLCompleta[i].setDelito(delito);
+                this.listaPPLCompleta[i].setFechaSalida("-");
+                this.listaPPLCompleta[i].setAniosRestantes(0);
+                this.listaPPLCompleta[i].setClasificacion("-");
+                this.listaPPLCompleta[i].setPena(0);
             }
         }
-    }*/
+    }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
