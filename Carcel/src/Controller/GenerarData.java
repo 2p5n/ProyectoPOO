@@ -1,20 +1,16 @@
 package Controller;
+
 import java.time.LocalDate;
 import java.util.Random;
+
 public class GenerarData {
-    private int n = 1000;
-    private String[] nombre;
-    private String[] edad;
-    private String[] cedula;
-    private String[] delito;
+
     // Constructor que acepta los arreglos como parámetros
-    public GenerarData(String[] nombre, String[] edad, String[] cedula, String[] delito) {
-        this.nombre = nombre;
-        this.edad = edad;
-        this.cedula = cedula;
-        this.delito = delito;
+    public GenerarData() {
     }
-    public void generarCedulas(String[] array) { //Generar identificaciondes de los PPL
+
+    public String[] generarCedulas() { //Generar identificaciondes de los PPL
+        String array[] = new String[1000];
         int x1 = 0;
         int x2 = 0;
         for (int i = 0; i < array.length; i++) {
@@ -22,8 +18,11 @@ public class GenerarData {
             x2 = (int) (Math.random() * 90102 - 1) + 10190;
             array[i] = String.valueOf(x1) + String.valueOf(x2);
         }
+        return array;
     }
-    public void generarNombresPPL(String array[]) { //Generar nombres completos de los PPL
+
+    public String[] generarNombresPPL() { //Generar nombres completos de los PPL
+        String array[] = new String[1000];
         String nomPersonas1[] = {"Roberto", "Dario", "Fabian", "Gonzalo", "Carlos", "Mario", "Pedro", "Victor", "Michael", "Byron"};
         String nomPersonas2[] = {"Antonio", "Cesar", "Pablo", "Adrian", "Diego", "Julian", "Sergio", "Paulo", "Angel", "Vicente"};
         String apePersonas1[] = {"Paredes", "Romero", "Cuenca", "Guerrero", "Garcia", "Torres", "Cevallos", "Perero", "Gonzales", "Perez"};
@@ -35,8 +34,11 @@ public class GenerarData {
             int indAleatorioApe2 = (int) (Math.random() * apePersonas1.length - 1) + 0;
             array[i] = nomPersonas1[indAleatorioNomb1] + " " + nomPersonas2[indAleatorioNomb2] + " " + apePersonas1[indAleatorioApe1] + " " + apePersonas2[indAleatorioApe2];
         }
+        return array;
     }
-    public void generaredades(String[] array) { //Generar edades de los PPL
+
+    public String[] generaredades() { //Generar edades de los PPL
+        String array[] = new String[1000];
         int edad = 0;
         int anioActual = 0;
         LocalDate fechaActual = LocalDate.now();
@@ -55,8 +57,11 @@ public class GenerarData {
             }
             array[i] = String.valueOf(edad);
         }
+        return array;
     }
-    public void generardelitos(String[] array) {//Generar el delito cometido
+
+    public String[] generardelitos() {//Generar el delito cometido
+        String array[] = new String[1000];
         int indAleatorio = 0;
         Random rand = new Random();
         String delitosA[] = {"Narcotrafico", "Homicidio"};
@@ -74,11 +79,6 @@ public class GenerarData {
                 array[i] = delitosB[indAleatorio];
             }
         }
-    }
-    public void ingresarDatos(String nombre[], String edad[], String cedula[], String delito[]){
-        generarNombresPPL(nombre);
-        generaredades(edad);
-        generarCedulas(cedula);
-        generardelitos(delito);
+        return array;
     }
 }
