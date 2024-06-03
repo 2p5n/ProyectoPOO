@@ -38,7 +38,7 @@ public class Ejecutor {
         carcel.promDelitoPabe();
         carcel.promEdadesPabe();
         System.out.println("Promedio de Edades de la carcel: " + prom);
-
+/*
         System.out.println("INGRESA LA CEDULA DEL PPL QUE QUIERES ELIMINAR");
         String cedula = tc.next();
         carcel.eliminarPreso(cedula);
@@ -57,12 +57,13 @@ public class Ejecutor {
         String delito = tc.next();
         carcel.agregarPPL(pabellon, nombre, cedula, edad, delito);
         System.out.println(carcel);
-
+*/
         System.out.println("INGRESA LA CEDULA DEL PPL QUE QUIERES DAR UN AGRAVANTE");
         String cedula2 = tc.next();
         System.out.println("INGRESA EL TIEMPO DEL AGRAVANTE (anios)");
         int agravante = tc.nextInt();
         carcel.asignarAgravantes(cedula2, agravante);
+        carcel.calcularFechaSalida();
         System.out.println(carcel);
     }
 }
