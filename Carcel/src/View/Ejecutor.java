@@ -4,6 +4,7 @@ import Controller.Carcel;
 import Controller.GenerarData;
 import Controller.PPL;
 import java.util.Scanner;
+
 public class Ejecutor {
 
     public static void main(String[] args) {
@@ -24,7 +25,7 @@ public class Ejecutor {
         for (int i = 0; i < 1000; i++) {
             listaPPL[i] = new PPL(nombres[i], edades[i], cedulas[i], fechasIngreso[i], delitos[i]);
         }
-        
+
         //Instanciar la carcel
         Carcel carcel = new Carcel(listaPPL);
         carcel.asignarClasificacion();
@@ -37,7 +38,7 @@ public class Ejecutor {
         carcel.promDelitoPabe();
         carcel.promEdadesPabe();
         System.out.println("Promedio de Edades de la carcel: " + prom);
-        
+
         System.out.println("INGRESA LA CEDULA DEL PPL QUE QUIERES ELIMINAR");
         String cedula = tc.next();
         carcel.eliminarPreso(cedula);
@@ -55,6 +56,13 @@ public class Ejecutor {
         System.out.println("Delito");
         String delito = tc.next();
         carcel.agregarPPL(pabellon, nombre, cedula, edad, delito);
+        System.out.println(carcel);
+
+        System.out.println("INGRESA LA CEDULA DEL PPL QUE QUIERES DAR UN AGRAVANTE");
+        String cedula2 = tc.next();
+        System.out.println("INGRESA EL TIEMPO DEL AGRAVANTE (anios)");
+        int agravante = tc.nextInt();
+        carcel.asignarAgravantes(cedula2, agravante);
         System.out.println(carcel);
     }
 }

@@ -1,12 +1,9 @@
 package Controller;
-
 import java.time.LocalDate;
 import java.util.Random;
-
 public class GenerarData {
     public GenerarData() {
     }
-    
     public String fechaActual(){ //RETORNA UNA CADENA CON LA FECHA ACTUAL
         LocalDate fechaActual = LocalDate.now();
         String fechaCadena = null;
@@ -16,7 +13,6 @@ public class GenerarData {
         fechaCadena = String.valueOf(diaActual)+"/"+String.valueOf(mesActual)+"/"+String.valueOf(anioActual);
         return fechaCadena;
     }
-    
     public String[] generarCedulas() { //RETORNA UN ARRAY DE CADENAS CON CEDULAS DE 10 DIGITOS
         String array[] = new String[1000];
         int x1 = 0;
@@ -28,7 +24,6 @@ public class GenerarData {
         }
         return array;
     }
-
     public String[] generarNombresPPL() { //RETORNA UN ARRAY DE CADENAS CON  NOMBRES ALEATORIOS
         String array[] = new String[1000];
         String nomPersonas1[] = {"Roberto", "Dario", "Fabian", "Gonzalo", "Carlos", "Mario", "Pedro", "Victor", "Michael", "Byron"};
@@ -44,7 +39,6 @@ public class GenerarData {
         }
         return array;
     }
-
     public int[] generaredades() { //RETORNA UN ARRAY DE ENTEROS CON EDADES ALEATORIAS
         int[] array = new int[1000];
         Random rand = new Random();
@@ -56,7 +50,6 @@ public class GenerarData {
         }
         return array;
     }
-
     public String[] generardelitos() { //RETORNA UN ARRAY DE CADENAS CON DELITOS ALEATORIOS
         //GENERAR DELITOS ALTA PELIGROSIDAD
         String[] arrayA = new String[200];

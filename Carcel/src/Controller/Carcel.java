@@ -342,7 +342,20 @@ public class Carcel {
         System.out.println("Estafa: " + promDelito9);
         System.out.println("Otros: " + promDelito10);
     }
-
+    public void asignarAgravantes(String cedula, int agravante){
+        boolean encontrado = false;
+        for (int i = 0; i < this.listaPPLCompleta.length; i++) {
+            if (this.listaPPLCompleta[i].getCedula().equalsIgnoreCase(cedula)) {
+                int pena = this.listaPPLCompleta[i].getPena();
+                pena = pena + agravante;
+                this.listaPPLCompleta[i].setPena(pena);
+                encontrado = true;
+            }
+        }
+        if (!encontrado) {
+            System.out.println("PPL NO ENCONTRADO");
+        }
+    }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
